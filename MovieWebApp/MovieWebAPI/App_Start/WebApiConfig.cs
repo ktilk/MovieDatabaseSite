@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace MovieWebAPI
 {
@@ -19,6 +21,14 @@ namespace MovieWebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var formatters = config.Formatters;
+            var jsonFormatter = formatters.JsonFormatter;
+
+            // remove xml formatter
+            formatters.Remove(formatters.XmlFormatter);
+
+            jsonFormatter.SerializerSettings.Formatting = Formatting.Indented;
         }
     }
 }
