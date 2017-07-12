@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Newtonsoft.Json;
 
 namespace MovieWebAPI
@@ -11,6 +12,11 @@ namespace MovieWebAPI
     {
         public static void Register(HttpConfiguration config)
         {
+
+            //Enable Cross Origin Resource Sharing (CORS)
+            var cors = new EnableCorsAttribute("http://localhost:58165", "*", "*");
+            config.EnableCors(cors);
+
             // Web API configuration and services
 
             // Web API routes
@@ -22,13 +28,10 @@ namespace MovieWebAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            var formatters = config.Formatters;
-            var jsonFormatter = formatters.JsonFormatter;
-
             // remove xml formatter
-            formatters.Remove(formatters.XmlFormatter);
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-            jsonFormatter.SerializerSettings.Formatting = Formatting.Indented;
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;
         }
     }
 }

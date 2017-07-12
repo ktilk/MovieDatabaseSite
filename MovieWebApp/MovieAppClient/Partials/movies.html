@@ -1,0 +1,17 @@
+﻿<div class="row" ng-model="movies">
+    <h2>Movies</h2>
+    <div>
+        <label>Search by movie name</label>
+        <input type="text" ng-model="searchByName"/><br>
+        <input type="checkbox" name="category" value="Comedy">Comedy<br>
+    </div>
+    <div class="col-md-4" ng-repeat="movie in movies">
+        <h3>{{movie.Title}}  ({{movie.Year}})</h3>
+        <p>Rating: {{movie.Rating}}</p>
+        <p>{{movie.CategoryId}}</p>
+
+        <p>
+            <a class="btn btn-default" href="/Partials/movieDetailView.html">Details &raquo;</a> <!--direct to movie detail view-->
+        </p>
+    </div>
+</div>
