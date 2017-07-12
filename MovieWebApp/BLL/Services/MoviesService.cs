@@ -10,21 +10,28 @@ namespace BLL.Services
 {
     public class MoviesService
     {
-        private readonly MoviesRepository _repo;
+        private readonly MoviesRepository _moviesRepo;
+        private readonly MovieCategoriesRepository _categoriesRepo;
 
         public MoviesService()
         {
-            _repo = new MoviesRepository();
+            _categoriesRepo = new MovieCategoriesRepository();
+            _moviesRepo = new MoviesRepository();
         }
 
         public MoviesList GetAllMovies()
         {
-            return _repo.GetAll();
+            return _moviesRepo.GetAll();
         }
 
         public Movie GetMovie(int id)
         {
-            return _repo.GetById(id);
+            return _moviesRepo.GetById(id);
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            return _categoriesRepo.GetAll();
         }
     }
 }

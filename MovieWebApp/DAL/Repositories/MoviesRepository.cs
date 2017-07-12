@@ -8,19 +8,19 @@ namespace DAL.Repositories
 {
     public class MoviesRepository
     {
-        private MoviesList ml = InitializeDatabase();
+        private readonly MoviesList _ml = InitializeMovies();
         
         public MoviesList GetAll()
         {
-            return ml;
+            return _ml;
         }
 
         public Movie GetById(int id)
         {
-            return ml.Movies.FirstOrDefault(m => m.MovieId == id);
+            return _ml.Movies.FirstOrDefault(m => m.MovieId == id);
         }
 
-        public static MoviesList InitializeDatabase()
+        public static MoviesList InitializeMovies()
         {
             var ml = new MoviesList();
             ml.Movies.Add(new Movie()

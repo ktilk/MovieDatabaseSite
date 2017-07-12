@@ -1,23 +1,32 @@
-﻿app.controller("movieController", function ($scope, moviesService) {
+﻿app.controller("movieController", function ($scope, $routeParams, moviesService) {
     console.log("movieController activated!");
 
-    $scope.movies = [];
+    var movieId = $routeParams.id;
 
     init();
 
     function init() {
-        getMovies();
+        console.log("Init called");
+        if (movieId) {
+            getById(movieId);
+        } else {
+            getMovies();
+        }
     }
 
     function getMovies() {
         console.log("getMovies from controller called");
         moviesService.getMovies().then(function (resp) {
-            $scope.movies = resp.data;
+            console.log("Movies retrieved:");
+            $scope.movies = resp.data.Movies;
+            console.log($scope.movies.Movies);
         });
-        console.log($scope.movies);
     }
 
-        $scope.getById = function(id) {
-            return moviesService.getMovieById(id);
-        }
-    });
+    function getById(id) {
+        console.log("getById " + id + " called from controller");
+        moviesService.getMovieById(id).then(function (resp) {
+        $scope.movie = resp.data;
+        });
+    }
+});

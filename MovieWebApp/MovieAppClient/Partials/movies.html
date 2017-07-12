@@ -5,13 +5,13 @@
         <input type="text" ng-model="searchByName"/><br>
         <input type="checkbox" name="category" value="Comedy">Comedy<br>
     </div>
-    <div class="col-md-4" ng-repeat="movie in movies">
+    <div class="col-md-4" ng-repeat="movie in movies | filter:searchByName">
         <h3>{{movie.Title}}  ({{movie.Year}})</h3>
         <p>Rating: {{movie.Rating}}</p>
         <p>{{movie.CategoryId}}</p>
 
         <p>
-            <a class="btn btn-default" href="/Partials/movieDetailView.html">Details &raquo;</a> <!--direct to movie detail view-->
+            <a class="btn btn-default" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details &raquo;</a>
         </p>
     </div>
 </div>

@@ -1,5 +1,5 @@
 ﻿var app = angular.module("MovieApp", ["ngRoute"]);
-console.log("MovieApp module started!");
+
 app.config(function ($routeProvider) {
     $routeProvider
         .when("/",

@@ -1,8 +1,8 @@
-﻿<div>
-    <h2>Movie name (Year)</h2>
-    <p>Rating: 10</p>
-    <p>Description</p>
+﻿<div ng-model="movie">
+    <h2>{{movie.Title}} ({{movie.Year}})</h2>
+    <p>Rating: {{movie.Rating}}</p>
+    <p>{{movie.Description}}</p>
 </div>
 <p>
-    <a class="btn btn-default" href="/">Back</a> <!--direct to movie detail view-->
+    <a class="btn btn-default" href="/">Back</a>
 </p>
