@@ -2,11 +2,20 @@
     console.log("movieController activated!");
 
     var movieId = $routeParams.id;
+    $scope.categories = [];
+
+    function initCategories() {
+        $scope.categories.push({ id: 0, name: "Comedy" });
+        $scope.categories.push({ id: 1, name: "Action" });
+        $scope.categories.push({ id: 2, name: "Drama" });
+    }
 
     init();
 
     function init() {
         console.log("Init called");
+        initCategories();
+        console.log($scope.categories);
         if (movieId) {
             getById(movieId);
         } else {

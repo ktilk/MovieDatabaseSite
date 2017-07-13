@@ -1,0 +1,10 @@
+.movie-container {
+    width: 400px;
+    height: 400px;
+    float: left;
+    border-color: #000000;
+}
+
+.cell {
+    height: 300px;
+}

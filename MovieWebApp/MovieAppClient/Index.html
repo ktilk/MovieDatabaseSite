@@ -3,13 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <title>Movie Database Angular App</title>
+    <link rel="stylesheet" href="Assets/css/foundation.css">
+    <link rel="stylesheet" href="Assets/css/app.css">
 </head>
 <body>
-<div ng-view></div>
+<div class="grid-container">
+    <div ng-view></div>
+</div>
+<!--scripts for Angular-->
 <script src="Scripts/angular.js"></script>
 <script src="Scripts/angular-route.js"></script>
 <script src="App/app.js"></script>
 <script src="App/Controllers/movieController.js"></script>
 <script src="App/Services/moviesService.js"></script>
+<!--scripts for Foundation 6-->
+<script src="Assets/js/vendor/jquery.js"></script>
+<script src="Assets/js/vendor/what-input.js"></script>
+<script src="Assets/js/vendor/foundation.js"></script>
+<script src="Assets/js/app.js"></script>
 </body>
 </html>
