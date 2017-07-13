@@ -1,22 +1,21 @@
 ﻿<div ng-model="movies">
     <h2>Movies</h2>
-    <div>
+    <div class="">
         <label>Search by movie name</label>
-        <input type="text" ng-model="search"/><br>
-        <div ng-repeat="category in categories">
+        <input type="text" ng-model="searchFilter.title"/>
+        <div class="" ng-repeat="category in searchFilter.categories">
             <label>{{category.name}}</label>
-            <input type="checkbox" ng-model="selectedCategory" value="{{category}}">
+            <input type="checkbox" ng-model="category.selected" name="filter">
         </div>
-        <br>
     </div>
-    <div class="grid-x grid-padding-x">
-        <div class="large-4 medium-4 small-4 cell" ng-repeat="movie in movies | filter: {Title: search} ">
+    <div class="">
+        <div class="" ng-repeat="movie in movies | movieFilter: searchFilter">
             <h3>{{movie.Title}}  ({{movie.Year}})</h3>
             <p>Rating: {{movie.Rating}}</p>
-            <p>{{movie.CategoryId}}</p>
+            <p>{{getCategory(movie.CategoryId).name}}</p>
 
             <p>
-                <a class="button" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details</a>
+                <a class="" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details</a>
             </p>
         </div>
     </div>
