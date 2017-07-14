@@ -1,8 +1,7 @@
 ﻿<div ng-model="movies">
     <h2>Movies</h2>
     <div class="">
-        <label>Search by movie name</label>
-        <input type="text" ng-model="searchFilter.title"/>
+        <input type="text" ng-model="searchFilter.title" placeholder="Search by movie name"/>
         <div class="" ng-repeat="category in searchFilter.categories">
             <label>{{category.name}}</label>
             <input type="checkbox" ng-model="category.selected" name="filter">

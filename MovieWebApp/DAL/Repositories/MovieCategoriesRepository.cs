@@ -13,22 +13,24 @@ namespace DAL.Repositories
 
         private static List<Category> InitializeCategories()
         {
-            var categories = new List<Category>();
-            categories.Add(new Category()
+            var categories = new List<Category>
             {
-                CategoryId = 0,
-                Name = "Comedy"
-            });
-            categories.Add(new Category()
-            {
-                CategoryId = 1,
-                Name = "Action"
-            });
-            categories.Add(new Category()
-            {
-                CategoryId = 2,
-                Name = "Drama"
-            });
+                new Category()
+                {
+                    CategoryId = 0,
+                    Name = "Comedy"
+                },
+                new Category()
+                {
+                    CategoryId = 1,
+                    Name = "Action"
+                },
+                new Category()
+                {
+                    CategoryId = 2,
+                    Name = "Drama"
+                }
+            };
             return categories;
         }
 

@@ -2,7 +2,8 @@
     console.log("movieController activated!");
 
     var movieId = $routeParams.id;
-
+    $scope.categories = [];
+    $scope.movies = [];
     $scope.searchFilter = {
         title: "",
         categories: []
@@ -10,16 +11,18 @@
 
     init();
     
-    function markAsSelected() {
-        $scope.searchFilter.categories.forEach(function(category) {
+    function markAsSelected(filterCategories) {
+        filterCategories.forEach(function(category) {
             category.selected = true;
         });
     }
 
     function init() {
         console.log("Init called");
+        //getCategories();
         initCategories();
-        markAsSelected();
+        setSearchFilter();
+        console.log("categories from init");
         console.log($scope.categories);
         if (movieId) {
             getById(movieId);
@@ -33,25 +36,37 @@
         moviesService.getMovies().then(function (resp) {
             console.log("Movies retrieved:");
             $scope.movies = resp.data.Movies;
-            console.log($scope.movies.Movies);
+            console.log($scope.movies);
         });
     }
 
     function getById(id) {
         console.log("getById " + id + " called from controller");
         moviesService.getMovieById(id).then(function (resp) {
-        $scope.movie = resp.data;
+            $scope.movie = resp.data;
         });
     }
 
-    function initCategories() {
-        $scope.searchFilter.categories.push({ id: 0, name: "Comedy" });
-        $scope.searchFilter.categories.push({ id: 1, name: "Action" });
-        $scope.searchFilter.categories.push({ id: 2, name: "Drama" });
+    function getCategories() {
+        moviesService.getMovieCategories().then(function (resp){
+            $scope.categories = resp.data;
+            console.log("Categories from controller");
+            console.log($scope.categories);
+        });
     }
 
-    //TODO dont get categories from searchFilter
     $scope.getCategory = function(id) {
-        return $scope.searchFilter.categories.find(c => c.id === id);
+        return $scope.categories.find(c => c.id === id);
     };
+
+    function setSearchFilter() {
+        $scope.searchFilter.categories = $scope.categories;
+        markAsSelected($scope.searchFilter.categories);
+    }
+
+    function initCategories() {
+        $scope.categories.push({ id: 0, name: "Comedy" });
+        $scope.categories.push({ id: 1, name: "Action" });
+        $scope.categories.push({ id: 2, name: "Drama" });
+    }
 });

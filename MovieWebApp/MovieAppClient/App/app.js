@@ -1,4 +1,4 @@
-﻿var app = angular.module("MovieApp", ["ngRoute", "ui.bootstrap"]);
+﻿var app = angular.module("MovieApp", ["ngRoute"]);
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -19,10 +19,14 @@ app.config(function ($routeProvider) {
 app.filter("movieFilter", function () {
     return function(movies, searchFilter) {
         var out = [];
-        movies.forEach(function(movie) {
-            var categoryId = movie.CategoryId;
-            var category = searchFilter.categories.find(c => c.id === categoryId);
-            if (movie.Title.indexOf(searchFilter.title) !== -1 && category.selected) {
+        movies.forEach(function (movie) {
+            var movieTitle = movie.Title.toLowerCase(); //convert movie title to lower case for comparison
+            var filterTitle = searchFilter.title.toLowerCase();
+            //var categoryId = movie.CategoryId;
+            var category = searchFilter.categories.find(c => c.id === movie.CategoryId);
+
+            //check if movie title contains title in filter and if category of movie is selected
+            if (movieTitle.indexOf(filterTitle) !== -1 && category.selected) {
                 out.push(movie);
             }
         });
