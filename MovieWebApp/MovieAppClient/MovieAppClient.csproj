@@ -75,6 +75,7 @@
     <Content Include="Assets\bootstrap\js\npm.js" />
     <Content Include="Assets\bootstrap\js\ui-bootstrap-tpls-2.5.0.js" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\angucomplete.js" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />

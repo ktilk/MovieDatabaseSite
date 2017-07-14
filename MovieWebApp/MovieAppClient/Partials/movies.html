@@ -1,7 +1,20 @@
 ﻿<div ng-model="movies">
     <h2>Movies</h2>
     <div class="">
-        <input type="text" ng-model="searchFilter.title" placeholder="Search by movie name"/>
+        <div>
+            <!--https://github.com/darylrowland/angucomplete-->
+            <angucomplete id="ex1"
+                          placeholder="Search movies(autocomplete)"
+                          pause="100"
+                          selectedobject="searchFilter.movie"
+                          localdata="movies"
+                          searchfields="Title"
+                          titlefield="Title"
+                          minlength="1"
+                          inputclass="form-control form-control-small"/>
+        </div>
+
+        <input type="text" ng-model="searchFilter.title" placeholder="Search movies"/>
         <div class="" ng-repeat="category in searchFilter.categories">
             <label>{{category.name}}</label>
             <input type="checkbox" ng-model="category.selected" name="filter">

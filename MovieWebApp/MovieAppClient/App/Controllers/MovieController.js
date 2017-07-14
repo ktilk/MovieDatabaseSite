@@ -10,7 +10,7 @@
     };
 
     init();
-    
+
     function markAsSelected(filterCategories) {
         filterCategories.forEach(function(category) {
             category.selected = true;
