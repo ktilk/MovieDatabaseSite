@@ -17,11 +17,19 @@ namespace BLL.Services
             _moviesRepo = new MoviesRepository();
         }
 
+        /// <summary>
+        /// Gets all movies from repository
+        /// </summary>
+        /// <returns></returns>
         public MoviesList GetAllMovies()
         {
             return _moviesRepo.GetAll();
         }
 
+        /// <summary>
+        /// Gets a movie by ID from repository
+        /// </summary>
+        /// <returns></returns>
         public Movie GetMovie(int id)
         {
             return _moviesRepo.GetById(id);

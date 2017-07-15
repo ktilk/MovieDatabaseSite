@@ -18,6 +18,10 @@ namespace MovieWebAPI.Controllers
             _categoryService = new MovieCategoryService();
         }
 
+        /// <summary>
+        /// Returns a list of movie categories
+        /// </summary>
+        /// <returns></returns>
         public List<Category> GetMovieCategories()
         {
             return _categoryService.GetAllCategories();

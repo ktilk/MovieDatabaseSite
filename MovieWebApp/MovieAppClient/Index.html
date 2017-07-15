@@ -3,26 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <title>Movie Database Angular App</title>
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Assets/css/foundation.css">
+    <link rel="stylesheet" href="Assets/css/app.css">
 </head>
 <body>
-<div class="">
-    <div ng-view></div>
-</div>
+<nav class="top-bar">
+    <div class="wrap">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">Movie Database Site</li>
+                <li>
+                    <a href="/">Movies</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="main">
+    <div class="wrap" ng-view></div>
+</section>
+<footer></footer>
 <!--scripts for Angular-->
 <script src="Scripts/angular.js"></script>
 <script src="Scripts/angular-route.js"></script>
 <script src="Scripts/angular-animate.js"></script>
 <script src="Scripts/angular-touch.js"></script>
-    
+
 <!--App scripts-->
 <script src="App/app.js"></script>
 <script src="App/Controllers/movieController.js"></script>
 <script src="App/Services/moviesService.js"></script>
-    
+
 <!--angucomplete-->
 <script src="Scripts/angucomplete.js"></script>
+
 <!--scripts for Foundation 6-->
+<script src="Assets/js/vendor/jquery.js"></script>
+<script src="Assets/js/vendor/what-input.js"></script>
+<script src="Assets/js/vendor/foundation.js"></script>
+<script src="Assets/js/app.js"></script>
 </body>
 </html>

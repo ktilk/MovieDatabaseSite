@@ -10,16 +10,29 @@ namespace DAL.Repositories
     {
         private readonly MoviesList _ml = InitializeMovies();
         
+        /// <summary>
+        /// Returns MovieList object
+        /// </summary>
+        /// <returns></returns>
         public MoviesList GetAll()
         {
             return _ml;
         }
 
+        /// <summary>
+        /// Returns a movie by ID from MovieList
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Movie GetById(int id)
         {
             return _ml.Movies.FirstOrDefault(m => m.MovieId == id);
         }
 
+        /// <summary>
+        /// Initializes MovieList object with some hard coded movies
+        /// </summary>
+        /// <returns></returns>
         public static MoviesList InitializeMovies()
         {
             var ml = new MoviesList();

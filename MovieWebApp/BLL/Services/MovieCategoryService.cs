@@ -17,6 +17,10 @@ namespace BLL.Services
             _categoriesRepo = new MovieCategoriesRepository();
         }
 
+        /// <summary>
+        /// Gets all movie categories from repository
+        /// </summary>
+        /// <returns></returns>
         public List<Category> GetAllCategories()
         {
             return _categoriesRepo.GetAll();

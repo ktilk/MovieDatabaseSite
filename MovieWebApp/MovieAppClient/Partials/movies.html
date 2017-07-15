@@ -1,34 +1,45 @@
 ﻿<div ng-model="movies">
     <h2>Movies</h2>
-    <div class="">
-        <div>
-            <!--https://github.com/darylrowland/angucomplete-->
-            <angucomplete id="ex1"
-                          placeholder="Search movies(autocomplete)"
-                          pause="100"
-                          selectedobject="searchFilter.movie"
-                          localdata="movies"
-                          searchfields="Title"
-                          titlefield="Title"
-                          minlength="1"
-                          inputclass="form-control form-control-small"/>
-        </div>
-
-        <input type="text" ng-model="searchFilter.title" placeholder="Search movies"/>
-        <div class="" ng-repeat="category in searchFilter.categories">
-            <label>{{category.name}}</label>
-            <input type="checkbox" ng-model="category.selected" name="filter">
-        </div>
-    </div>
-    <div class="">
-        <div class="" ng-repeat="movie in movies | movieFilter: searchFilter">
-            <h3>{{movie.Title}}  ({{movie.Year}})</h3>
-            <p>Rating: {{movie.Rating}}</p>
-            <p>{{getCategory(movie.CategoryId).name}}</p>
-
-            <p>
-                <a class="" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details</a>
-            </p>
+    <div class="control-area">
+        <div class="grid-x grid-padding-x">
+            <div class="large-6 column">
+                <div>
+                    <!--https://github.com/darylrowland/angucomplete-->
+                    <angucomplete id="ex1"
+                                  placeholder="Search movies(autocomplete)"
+                                  pause="100"
+                                  selectedobject="searchFilter.movie"
+                                  localdata="movies"
+                                  searchfields="Title"
+                                  titlefield="Title"
+                                  minlength="1"
+                                  inputclass="form-control form-control-small" />
+                </div>
+                <input type="text" ng-model="searchFilter.title" placeholder="Search movies" />
+            </div>
+            <div class="large-6 column">
+                <div class="control-area-selectbox">
+                    <div ng-repeat="category in searchFilter.categories">
+                        <input id="checkbox{{category.id}}" type="checkbox" ng-model="category.selected" name="filter">
+                        <label for="checkbox{{category.id}}">{{category.name}}</label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <div class="grid-x grid-padding-x">
+        <div class="large-4 column" ng-repeat="movie in movies | movieFilter: searchFilter">
+            <div class="movie">
+                <div class="movie-info">
+                    <h3>{{movie.Title}} ({{movie.Year}})</h3>
+                    <p>Rating: {{movie.Rating}}</p>
+                    <p>{{getCategory(movie.CategoryId).name}}</p>
+
+                    <p>
+                        <a class="button" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

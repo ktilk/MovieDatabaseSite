@@ -18,11 +18,20 @@ namespace MovieWebAPI.Controllers
             _service = new MoviesService();
         }
 
+        /// <summary>
+        /// Returns a list of movies
+        /// </summary>
+        /// <returns></returns>
         public MoviesList GetMovies()
         {
             return _service.GetAllMovies();
         }
 
+        /// <summary>
+        /// Finds a movie by ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Movie GetMovieById(int id)
         {
             return _service.GetMovie(id);

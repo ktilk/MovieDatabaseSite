@@ -11,6 +11,19 @@ namespace DAL.Repositories
     {
         private readonly List<Category> _categories = InitializeCategories();
 
+        /// <summary>
+        /// Returns all movie categories
+        /// </summary>
+        /// <returns></returns>
+        public List<Category> GetAll()
+        {
+            return _categories;
+        }
+
+        /// <summary>
+        /// Initializes a list with some hard coded movie categories
+        /// </summary>
+        /// <returns></returns>
         private static List<Category> InitializeCategories()
         {
             var categories = new List<Category>
@@ -32,11 +45,6 @@ namespace DAL.Repositories
                 }
             };
             return categories;
-        }
-
-        public List<Category> GetAll()
-        {
-            return _categories;
         }
     }
 }

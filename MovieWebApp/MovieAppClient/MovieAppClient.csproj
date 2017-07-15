@@ -65,15 +65,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="Assets\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="Assets\bootstrap\css\bootstrap.css" />
-    <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Assets\bootstrap\js\bootstrap.js" />
-    <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Assets\bootstrap\js\npm.js" />
-    <Content Include="Assets\bootstrap\js\ui-bootstrap-tpls-2.5.0.js" />
+    <Content Include="Assets\css\app.css" />
+    <Content Include="Assets\css\foundation.css" />
+    <Content Include="Assets\css\foundation.min.css" />
+    <Content Include="Assets\js\app.js" />
+    <Content Include="Assets\js\vendor\foundation.js" />
+    <Content Include="Assets\js\vendor\foundation.min.js" />
+    <Content Include="Assets\js\vendor\jquery.js" />
+    <Content Include="Assets\js\vendor\what-input.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angucomplete.js" />
     <Content Include="Scripts\version.json" />
@@ -90,14 +89,6 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
-    <Content Include="Assets\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="Assets\bootstrap\css\bootstrap-theme.min.css.map" />
-    <Content Include="Assets\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Assets\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
