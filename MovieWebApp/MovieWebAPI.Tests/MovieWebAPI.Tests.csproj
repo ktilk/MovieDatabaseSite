@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Services\MoviesServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -100,11 +101,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{c95c3c05-771f-433f-a81e-4811039790ef}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{208BB87B-0898-4886-AF66-8C153913910A}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieWebAPI\MovieWebAPI.csproj">
       <Project>{3423E37F-A795-4193-9A88-AB6B0CC1DFB5}</Project>
       <Name>MovieWebAPI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

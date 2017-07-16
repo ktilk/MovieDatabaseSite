@@ -29,6 +29,7 @@ namespace BLL.Services
         /// <summary>
         /// Gets a movie by ID from repository
         /// </summary>
+        /// <param name="id">The ID of the movie</param>
         /// <returns></returns>
         public Movie GetMovie(int id)
         {

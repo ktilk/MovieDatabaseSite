@@ -30,7 +30,7 @@ namespace MovieWebAPI.Controllers
         /// <summary>
         /// Finds a movie by ID
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The ID of the movie</param>
         /// <returns></returns>
         public Movie GetMovieById(int id)
         {

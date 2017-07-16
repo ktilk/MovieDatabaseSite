@@ -22,7 +22,7 @@ namespace DAL.Repositories
         /// <summary>
         /// Returns a movie by ID from MovieList
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The ID of the movie</param>
         /// <returns></returns>
         public Movie GetById(int id)
         {
