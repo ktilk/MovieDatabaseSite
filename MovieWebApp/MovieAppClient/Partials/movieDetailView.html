@@ -1,8 +1,10 @@
-﻿<div ng-model="movie">
-    <h2>{{movie.Title}} ({{movie.Year}})</h2>
-    <p>Rating: {{movie.Rating}}</p>
-    <p>{{movie.Description}}</p>
+﻿<div class="movie">
+    <div ng-model="movie">
+        <h2>{{movie.Title}} ({{movie.Year}})</h2>
+        <p>Rating: {{movie.Rating}}</p>
+        <p>{{movie.Description}}</p>
+    </div>
+    <p>
+        <a class="button" href="/">Back</a>
+    </p>
 </div>
-<p>
-    <a class="button" href="/">Back</a>
-</p>

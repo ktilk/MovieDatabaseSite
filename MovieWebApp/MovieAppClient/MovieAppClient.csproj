@@ -65,6 +65,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\data.js" />
+    <Content Include="App\Filters\movieFilter.js" />
     <Content Include="Assets\css\app.css" />
     <Content Include="Assets\css\foundation.css" />
     <Content Include="Assets\css\foundation.min.css" />
