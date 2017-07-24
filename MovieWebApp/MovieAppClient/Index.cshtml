@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html ng-app="MovieApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Movie Database Angular App</title>
+    @Styles.Render("~/Content/css")
+    @*<link rel="stylesheet" href="Assets/css/foundation.css">
+    <link rel="stylesheet" href="Assets/css/app.css">*@
+</head>
+<body>
+    <nav class="top-bar">
+        <div class="wrap">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Movie Database Site</li>
+                    <li>
+                        <a href="/">Movies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="wrap" ng-view></div>
+    </section>
+    <footer></footer>
+<!--scripts for Angular-->
+    @Scripts.Render("~/bundles/angularjs")
+    @*<script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-touch.js"></script>*@
+
+<!--App scripts-->
+    @Scripts.Render("~/bundles/app")
+    @*<script src="App/app.js"></script>
+    <script src="App/data.js"></script>
+    <script src="App/Controllers/movieController.js"></script>
+    <script src="App/Services/moviesService.js"></script>
+    <script src="App/Filters/movieFilter.js"></script>*@
+
+<!--angucomplete-->
+    @*<script src="Scripts/angucomplete.js"></script>*@
+
+<!--scripts for Foundation 6-->
+    @Scripts.Render("~/bundles/foundation6")
+    @*<script src="Assets/js/vendor/jquery.js"></script>
+    <script src="Assets/js/vendor/what-input.js"></script>
+    <script src="Assets/js/vendor/foundation.js"></script>
+    <script src="Assets/js/app.js"></script>*@
+</body>
+</html>
