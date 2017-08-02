@@ -1,5 +1,5 @@
-﻿<div ng-model="movies">
-    <h2>Movies</h2>
+﻿<div ng-controller="movieController as vm" ng-model="movies">
+    <h2>{{vm.title}}</h2>
     <div class="control-area">
         <div class="grid-x grid-padding-x">
             <div class="small-12 large-6 column">
@@ -15,11 +15,11 @@
                                   minlength="1"
                                   inputclass="form-control form-control-small" />
                 </div>
-                <input type="text" ng-model="searchFilter.title" placeholder="Search movies" />
+                <input type="text" ng-model="vm.searchFilter.title" placeholder="Search movies" />
             </div>
             <div class="small-12 large-6 column">
                 <div class="grid-x grid-padding-x control-area-selectbox">
-                    <div class="small-12 medium-6 large-2 column" ng-repeat="category in searchFilter.categories">
+                    <div class="small-12 medium-6 large-2 column" ng-repeat="category in vm.searchFilter.categories">
                         <input id="checkbox{{category.id}}" type="checkbox" ng-model="category.selected" name="filter">
                         <label for="checkbox{{category.id}}">{{category.name}}</label>
                     </div>
@@ -28,12 +28,12 @@
         </div>
     </div>
     <div class="grid-x grid-padding-x">
-        <div class="small-12 medium-6 large-4 column" ng-repeat="movie in movies | movieFilter: searchFilter">
+        <div class="small-12 medium-6 large-4 column" ng-repeat="movie in vm.movies | movieFilter: vm.searchFilter">
             <div class="movie">
                 <div class="movie-info">
                     <h3>{{movie.Title}} ({{movie.Year}})</h3>
                     <p>Rating: {{movie.Rating}}</p>
-                    <p>{{getCategory(movie.CategoryId).name}}</p>
+                    <p>{{vm.getCategory(movie.CategoryId).name}}</p>
 
                     <p>
                         <a class="button" ng-href="/#!/movieDetails/{{movie.MovieId}}">Details</a>

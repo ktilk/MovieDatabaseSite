@@ -1,8 +1,8 @@
-﻿<div class="movie">
-    <div ng-model="movie">
-        <h2>{{movie.Title}} ({{movie.Year}})</h2>
-        <p>Rating: {{movie.Rating}}</p>
-        <p>{{movie.Description}}</p>
+﻿<div class="movie" ng-controller="movieController as vm">
+    <div>
+        <h2>{{vm.movie.Title}} ({{vm.movie.Year}})</h2>
+        <p>Rating: {{vm.movie.Rating}}</p>
+        <p>{{vm.movie.Description}}</p>
     </div>
     <p>
         <a class="button" href="/">Back</a>

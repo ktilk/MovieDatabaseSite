@@ -1,9 +1,10 @@
-﻿app.controller("movieController", function ($scope, $routeParams, moviesService) {
-    
+﻿app.controller("movieController", function ($routeParams, moviesService) {
+    var vm = this;
     var movieId = $routeParams.id;
-    $scope.categories = [];
-    $scope.movies = [];
-    $scope.searchFilter = {
+    vm.title = "Movies";
+    vm.categories = [];
+    vm.movies = [];
+    vm.searchFilter = {
         title: "",
         categories: []
     };
@@ -29,35 +30,40 @@
 
     function getMovies() {
         moviesService.getMovies().then(function (resp) {
-            $scope.movies = resp.data.Movies;
+            vm.movies = resp.data.Movies;
         });
     }
 
     function getById(id) {
         moviesService.getMovieById(id).then(function (resp) {
-            $scope.movie = resp.data;
+            vm.movie = resp.data;
         });
     }
 
     function getCategories() {
         moviesService.getMovieCategories().then(function (resp){
-            $scope.categories = resp.data;
+            vm.categories = resp.data;
         });
     }
 
-    $scope.getCategory = function(id) {
-        return $scope.categories.find(c => c.id === id);
+    vm.getCategory = function(id) {
+        return vm.categories.find(c => c.id === id);
     };
 
     function setSearchFilter() {
-        $scope.searchFilter.categories = $scope.categories;
-        markAsSelected($scope.searchFilter.categories);
+        vm.searchFilter.categories = vm.categories;
+        markAsSelected(vm.searchFilter.categories);
     }
 
     function initCategories() {
-        $scope.categories.push({ id: 0, name: "Comedy" });
-        $scope.categories.push({ id: 1, name: "Action" });
-        $scope.categories.push({ id: 2, name: "Drama" });
-        $scope.categories.push({ id: 3, name: "Goofy" });
+        vm.categories.push({ id: 0, name: "Comedy" });
+        vm.categories.push({ id: 1, name: "Action" });
+        vm.categories.push({ id: 2, name: "Drama" });
+        vm.categories.push({ id: 3, name: "Goofy" });
     }
+
+    var category = function Category(id, name) {
+        this.id = id;
+        this.name = name;
+    };
 });
