@@ -1,4 +1,6 @@
-﻿app.controller("movieController", function ($routeParams, moviesService) {
+﻿angular.module("MovieApp").controller("movieController", movieController);
+
+function movieController($routeParams, moviesService) {
     var vm = this;
     var movieId = $routeParams.id;
     vm.title = "Movies";
@@ -8,6 +10,7 @@
         title: "",
         categories: []
     };
+    vm.getCategory = getCategory();
 
     init();
 
@@ -46,9 +49,9 @@
         });
     }
 
-    vm.getCategory = function(id) {
+    function getCategory(id) {
         return vm.categories.find(c => c.id === id);
-    };
+    }
 
     function setSearchFilter() {
         vm.searchFilter.categories = vm.categories;
@@ -66,4 +69,4 @@
         this.id = id;
         this.name = name;
     };
-});
+}

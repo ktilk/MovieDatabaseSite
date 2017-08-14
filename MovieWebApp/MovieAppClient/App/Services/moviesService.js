@@ -1,17 +1,25 @@
-﻿app.service("moviesService", function ($http) {
+﻿angular.module("MovieApp").factory("moviesService", moviesService);
 
-    this.getMovies = function() {
+function moviesService ($http) {
+    var service = {
+        getMovies: getMovies,
+        getMovieById: getMovieById,
+        getMovieCategories: getMovieCategories
+    };
+    return service;
+
+    function getMovies() {
         var resp = $http.get(moviesApiUri);
         return resp;
-    };
+    }
 
-    this.getMovieById = function(id) {
+    function getMovieById(id) {
         var resp = $http.get(moviesApiUri + id);
         return resp;
-    };
+    }
 
-    this.getMovieCategories = function() {
+    function getMovieCategories() {
         var resp = $http.get(movieCategoriesApiUri);
         return resp;
-    };
-});
+    }
+}

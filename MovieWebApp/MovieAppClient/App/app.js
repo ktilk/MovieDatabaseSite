@@ -1,6 +1,6 @@
-﻿var app = angular.module("MovieApp", ["ngRoute", "angucomplete"]);
+﻿angular.module("MovieApp", ["ngRoute", "angucomplete"]);
 
-app.config(function ($routeProvider) {
+angular.module("MovieApp").config(function ($routeProvider) {
     $routeProvider
         .when("/",
         {

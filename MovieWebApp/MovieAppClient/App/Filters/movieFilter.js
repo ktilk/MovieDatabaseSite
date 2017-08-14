@@ -1,4 +1,6 @@
-﻿app.filter("movieFilter", function () {
+﻿angular.module("MovieApp").filter("movieFilter", movieFilter);
+
+function movieFilter() {
     return function (movies, searchFilter) {
         var out = [];
 
@@ -22,4 +24,4 @@
         });
         return out;
     };
-});
+}
