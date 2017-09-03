@@ -36,5 +36,10 @@ namespace MovieWebAPI.Controllers
         {
             return _service.GetMovie(id);
         }
+
+        public void AddMovie(Movie movie)
+        {
+            _service.AddMovie(movie);
+        }
     }
 }

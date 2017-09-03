@@ -29,6 +29,11 @@ namespace DAL.Repositories
             return _ml.Movies.FirstOrDefault(m => m.MovieId == id);
         }
 
+        public void AddMovie(Movie movie)
+        {
+            _ml.Movies.Add(movie);
+        }
+
         /// <summary>
         /// Initializes MovieList object with some hard coded movies
         /// </summary>

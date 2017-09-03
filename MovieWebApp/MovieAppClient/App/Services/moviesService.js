@@ -4,7 +4,8 @@ function moviesService ($http) {
     var service = {
         getMovies: getMovies,
         getMovieById: getMovieById,
-        getMovieCategories: getMovieCategories
+        getMovieCategories: getMovieCategories,
+        addMovie: addMovie
     };
     return service;
 
@@ -21,5 +22,10 @@ function moviesService ($http) {
     function getMovieCategories() {
         var resp = $http.get(movieCategoriesApiUri);
         return resp;
+    }
+
+    function addMovie(movie) {
+        console.log("addMovie from MovieService called");
+        return $http.post(moviesApiUri, movie);
     }
 }

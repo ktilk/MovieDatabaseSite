@@ -35,5 +35,10 @@ namespace BLL.Services
         {
             return _moviesRepo.GetById(id);
         }
+
+        public void AddMovie(Movie movie)
+        {
+            _moviesRepo.AddMovie(movie);
+        }
     }
 }

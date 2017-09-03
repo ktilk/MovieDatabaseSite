@@ -1,0 +1,23 @@
+<div ng-controller="movieController as vm">
+    <h2>New Movie</h2>
+    <div class="col-sm-4">
+            <div class="form-group">
+                <label>Movie ID:</label>
+                <input type="text" ng-model="vm.newMovie.movieId">
+                <label>Title:</label>
+                <input type="text" ng-model="vm.newMovie.title">
+                <label>Year:</label>
+                <input type="text" ng-model="vm.newMovie.year">
+                <label>Description:</label>
+                <input type="text" ng-model="vm.newMovie.description">
+                <label>Rating:</label>
+                <input type="text" ng-model="vm.newMovie.rating">
+                <label>Category ID:</label>
+                <input type="text" ng-model="vm.newMovie.categoryId">
+            </div>
+            <p>
+                <a class="button" ng-click="vm.addMovie(vm.newMovie)" ng-href="/">Add movie</a>
+                <a class="button" ng-href="/">Cancel</a>
+            </p>
+    </div>
+</div>

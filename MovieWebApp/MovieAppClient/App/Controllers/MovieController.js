@@ -10,7 +10,16 @@ function movieController($routeParams, moviesService) {
         title: "",
         categories: []
     };
+    vm.newMovie = {
+        movieId: 0,
+        title: "",
+        year: "",
+        description: "",
+        rating: "",
+        categoryId: 0
+    }
     vm.getCategory = getCategory();
+    vm.addMovie = addMovie(vm.newMovie);
 
     init();
 
@@ -41,6 +50,11 @@ function movieController($routeParams, moviesService) {
         moviesService.getMovieById(id).then(function (resp) {
             vm.movie = resp.data;
         });
+    }
+
+    function addMovie(movie) {
+        console.log("addMovie from MovieController called");
+        moviesService.addMovie(movie);
     }
 
     function getCategories() {

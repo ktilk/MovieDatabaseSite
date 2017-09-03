@@ -11,6 +11,11 @@ angular.module("MovieApp").config(function ($routeProvider) {
         {
             controller: "movieController",
             templateUrl: "Partials/movieDetailView.html"
+        })
+        .when("/addMovie",
+        {
+            controller: "movieController",
+            templateUrl: "Partials/addMovieView.html"
         });
 
     $routeProvider.otherwise({ redirectTo: "/" });
